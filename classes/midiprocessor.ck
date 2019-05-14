@@ -7,11 +7,14 @@ public class MIDIProcessor {
     1 => int verbose;
 
     function int initialize(int deviceIn, int deviceOut) {
+
         if( !min.open( deviceIn ) )
             return 0;
 
         if (verbose)
             <<< "MIDIIn device:", min.num(), " -> ", min.name() >>>;
+
+        if (deviceOut < 0 ) return 1;   // no output, only input
 
         if( !mout.open( deviceOut ) )
             return 0;
