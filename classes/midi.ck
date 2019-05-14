@@ -7,6 +7,7 @@ public class MIDI {
     12 => int PROGRAM;
     13 => int C_AFTER;
     14 => int PITCH;
+    15 => int SYSTEM;
 
     function static int messageType(int message)
     {
