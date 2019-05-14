@@ -35,3 +35,8 @@ Endless cycle: read midi message and call `process(msg)`
 function void process(MidiMsg msg)
 ```
 Override this function in a subclass with your logic.
+
+## License and authors
+
+Author:: Timur Batyrshin <erthad@gmail.com>
+License:: MIT
