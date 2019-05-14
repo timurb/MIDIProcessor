@@ -38,5 +38,5 @@ Override this function in a subclass with your logic.
 
 ## License and authors
 
-Author:: Timur Batyrshin <erthad@gmail.com>
-License:: MIT
+* Author:: Timur Batyrshin <erthad@gmail.com>
+* License:: MIT
