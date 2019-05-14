@@ -2,6 +2,7 @@ class NoteTranspose extends MIDIProcessor {
     function void process(MidiMsg msg) {
         if (MIDI.messageType(msg.data1) == MIDI.NOTE_ON ||
             MIDI.messageType(msg.data1) == MIDI.NOTE_OFF) {
+                <<< msg.data1, msg.data2, msg.data3 >>>;
                 3 -=> msg.data2;
 
                 <<< msg.data1, msg.data2, msg.data3 >>>;
@@ -12,5 +13,7 @@ class NoteTranspose extends MIDIProcessor {
 
 NoteTranspose transposer;
 
-if (transposer.initialize(0,0))
+if (transposer.initialize(0,0)) {
+    false => transposer.verbose;  // we have our own verbosity implemented
     transposer.run();
+}

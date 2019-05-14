@@ -4,7 +4,7 @@ public class MIDIProcessor {
     MidiOut mout;
     MidiMsg msg;
 
-    1 => int verbose;
+    true => int verbose;
 
     function int initialize(int deviceIn, int deviceOut) {
 
