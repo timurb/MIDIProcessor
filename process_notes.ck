@@ -12,8 +12,19 @@ class NoteTranspose extends MIDIProcessor {
 }
 
 NoteTranspose transposer;
+int inDevice;
+int outDevice;
 
-if (transposer.initialize(1,0)) {
+if (me.args()) {
+    me.arg(0) => Std.atoi => int inDevice;
+    me.arg(1) => Std.atoi => int outDevice;
+} else {
+    <<<"usage: chuck process_notes.ck:InDeviceNumber:OutDeviceNumber">>>;
+    <<<"see chuck --probe for device numbers">>>;
+    me.exit();
+}
+
+if (transposer.initialize(inDevice,outDevice)) {
     false => transposer.verbose;  // we have our own verbosity implemented
     transposer.run();
 }

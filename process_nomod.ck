@@ -11,8 +11,19 @@ class MIDIRelay extends MIDIProcessor {
 }
 
 MIDIRelay relay;
+int inDevice;
+int outDevice;
 
-if (relay.initialize(1,0)) {
+if (me.args()) {
+    me.arg(0) => Std.atoi => int inDevice;
+    me.arg(1) => Std.atoi => int outDevice;
+} else {
+    <<<"usage: chuck process_nomod.ck:InDeviceNumber:OutDeviceNumber">>>;
+    <<<"see chuck --probe for device numbers">>>;
+    me.exit();
+}
+
+if (relay.initialize(inDevice,outDevice)) {
     false => relay.verbose;  // we have our own verbosity implemented
     relay.run();
 }
