@@ -13,7 +13,7 @@ class NoteTranspose extends MIDIProcessor {
 
 NoteTranspose transposer;
 
-if (transposer.initialize(0,0)) {
+if (transposer.initialize(1,0)) {
     false => transposer.verbose;  // we have our own verbosity implemented
     transposer.run();
 }

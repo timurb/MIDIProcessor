@@ -9,7 +9,7 @@ class MIDIRelay extends MIDIProcessor {
 
 MIDIRelay relay;
 
-if (relay.initialize(0,0)) {
+if (relay.initialize(2,0)) {
     false => relay.verbose;  // we have our own verbosity implemented
     relay.run();
 }

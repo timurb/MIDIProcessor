@@ -6,5 +6,5 @@ class MIDIRelay extends MIDIProcessor {
 
 MIDIRelay relay;
 
-if (relay.initialize(0,0))
+if (relay.initialize(1,0))
     relay.run();
